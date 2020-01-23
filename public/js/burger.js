@@ -2,6 +2,9 @@
 $(function() {
     $(".create-form").on("submit", function(event) {
       event.preventDefault();
+
+
+     
   
       // creates new burger
       var newBurger = {
@@ -37,7 +40,7 @@ $(function() {
       });
     });
   // create the DELETE action
-  
+
     $(".trashburger").on("click", function(event) {
       event.preventDefault();
   

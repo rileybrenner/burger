@@ -19,6 +19,7 @@ router.get("/", function(req, res) {
       function(result) {
         // Send back the ID of new burger
         res.json({ id: result.insertId });
+        console.log("Inserted a burger");
       }
     );
   });
@@ -29,6 +30,7 @@ router.get("/", function(req, res) {
     burger.updateOne({ devoured: req.body.devoured }, condition, function(
       result
     ) {
+        console.log("updated a burger");
       if (result.changedRows === 0) {
         return res.status(404).end();
       } else {
@@ -41,6 +43,7 @@ router.get("/", function(req, res) {
     console.log("condition", condition);
 
     burger.deleteOne(condition, function(result) {
+        console.log("deleted burger")
       if (result.changedRows === 0) {
         return res.status(404).end();
       } else {
